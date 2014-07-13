@@ -1,0 +1,20 @@
+<%= form_for(@subject) do |f| %>
+  <% if @subject.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@subject.errors.count, "error")%> prohibited
+    this article from being saved:</h3>
+    <ul>
+      <% @subject.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.label(:name)%>
+  <%= f.text_field(:name)%>
+  <br>
+  Level
+  <%= f.select(:level, %w(High\ School College Graduate)) %>
+  <br>
+  <%= f.submit %>
+  <% end %>

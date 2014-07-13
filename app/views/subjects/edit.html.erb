@@ -1,0 +1,8 @@
+<h2>Edit Subject</h2>
+
+<p><%= render 'form' %></p>
+
+<div class="bottom_menu_options">
+  <%= link_to('Remove Subject', subject_path(@subject), method: :delete) %> |
+  <%= link_to('Back to All Subjects', subjects_path) %>
+</div>

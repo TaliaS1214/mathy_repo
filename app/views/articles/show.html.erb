@@ -1,0 +1,22 @@
+<h2><%=@article.position%>. <%= @article.title %></h2>
+
+<%= render partial:'nav_menu'%>
+
+<div class="article_introduction">
+  <%= markdown(@article.introduction) %>
+</div>
+
+<div class="article_body">
+  <%= markdown(@article.body)%>
+</div>
+
+<%= render partial:'nav_menu'%>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %>
+  <% if current_user %>
+    | <%= link_to('Edit Article', edit_subject_article_path(@subject, @article))%>
+  <% else %>
+    Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
+  <% end %>
+</div>

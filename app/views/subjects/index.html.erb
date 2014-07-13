@@ -1,0 +1,15 @@
+<h2>All Subjects</h2>
+
+<ul>
+  <div class="subject_list">
+    <% @subjects.each do |subject| %>
+      <li><%= link_to(subject.name, subject_path(subject)) %></li>
+    <% end %>
+  </div>
+</ul>
+
+<div class="bottom_menu_options">
+  <% if current_user %>
+    <%= link_to('Add Subject', new_subject_path) %>
+  <% end %>  
+</div>

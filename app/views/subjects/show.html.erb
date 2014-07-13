@@ -1,0 +1,23 @@
+<h2><%= @subject.name %></h2>
+
+<% if @articles.length == 0 %>
+  <div id='no_articles_msg'>No articles on <%= @subject.name %> have been written yet!</div>
+<% else %>
+  <ol class="subject_articles">
+    <% @articles.each do |article| %>
+      <li><%= link_to(article.title, subject_article_path(@subject, article)) %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+
+<div class="bottom_menu_options">
+  <% if current_user %>
+    <%= link_to('Add an Article', new_subject_article_path(@subject)) %> |
+    <%= link_to('Edit Subject', edit_subject_path(@subject)) %> |
+  <% end %>
+  <%= link_to('Back to All Subjects', subjects_path) %>
+  <% if !current_user %>
+    | Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
+  <% end %>
+</div>

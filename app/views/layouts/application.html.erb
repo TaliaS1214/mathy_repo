@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MathyApp</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div id="header_content">
+        <div id="logo">
+          <%= link_to('Mathy', root_path)%>
+        </div>
+        <div id="slogan">
+          Math made easier.
+        </div>
+        <div id="user_nav">
+          <% if current_user %>
+            Welcome back, <%= current_user.first_name %>!
+              <%= link_to 'Log Out', logout_path %>
+          <% else %>
+            <%= link_to 'Log In ', login_path %> |
+            <%= link_to 'Register', new_user_path %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+class MathematiciansController < ApplicationController
+end
