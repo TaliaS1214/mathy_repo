@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @problems = @article.problems
     @subject = @article.subject
 
     @current_position = @article.position

@@ -10,25 +10,16 @@
   <%= markdown(@article.body)%>
 </div>
 
-<h3>Exercises</h3>
-<div class="article_problems">
-  <% if @article.problems != [] %>
-    <ol>
-    <% @article.problems.each do |problem| %>
-      <li><%= markdown(problem.question) %></li>
-    <% end %>
-    </ol>
-  <% else %>
-    <p>Exercises coming soon!</p>
-  <% end %>
+<div id="exercises_link">
+  <%= link_to("View Chapter Exercises", subject_article_problems_path(@subject, @article)) %>
 </div>
 
 <%= render partial:'nav_menu'%>
 
 <div class="bottom_menu_options">
-  <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %>
+  <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %> |
   <% if current_user %>
-    | <%= link_to('Edit Article', edit_subject_article_path(@subject, @article))%>
+    <%= link_to('Edit Article', edit_subject_article_path(@subject, @article))%>
   <% else %>
     Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
   <% end %>

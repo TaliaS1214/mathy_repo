@@ -141,7 +141,41 @@ To finish the proof, we need to show that the factorization of any integer great
         position: 3,
         title: 'Modular Arithmetic and Congruences',
         introduction: "Modular arithmetic is an arithmetic system in which the integers behave quite differently from the way we're used to integers behaving. Unlike the normal arithmetic we know and love, when doing modular arithmetic with integers, there is such thing as a largest element. The analogy commonly used is that modular arithmetic is like telling time. When we look at a clock and see that it's 3 hours past 12pm, we know that it's not 15 o'clock (assume we're not on military time) but rather 3 o'clock. That's because the hours \"wrap around\" after the first 12 hours in the day have passed - the largest element in our time-telling system is the number 12. Now, unlike time, with modular arithmetic, there is a 0 element. The limit which the integers in a modular system may not exceed is referred to as the modulus , so in our time-telling scheme, we would say that we're doing arithmetic \"modulo 12\". We'll get into the details below. Keep in mind that modular arithmetic isn't easy to understand the first time you see it, so don't be worried if you don't completely understand this whole article the first time around!",
-        body: "Modular arithmetic works using what's known as a congruence relation.",
+        body: "Modular arithmetic works using what's known as a congruence relation.
+Modular arithmetic works using what's known as a congruence relation. A congruence relation is a special kind of equivalence relation, which is a binary relation on a set that obeys certain special rules. Those rules are given in the following definition,
+
+**Definition** (Equivalence Relation) : A binary relation ~ on a set *X* is said to be an equivalence relation if and only if the following three properties hold:
+1) (Reflexivity) a ~ a
+2) (Symmetry) a ~ b => b ~ a
+3) (Transitivity) a ~ b and b ~ c => a ~ c
+
+Let's make this a little more concrete with some examples.
+
+a) If we define the relation ~ between two lines in a flat plane to means 'is parallel to,' then ~ is an equivalent relation. This is because
+  1) A line is parallel to itself
+  2) If line L_1 is parallel to line L_2, then line L_2 is also parallel to L_1
+  3) If line L_1 is parallel to line L_2 and line L_2 is also parallel to L_3, then L_1 is parallel to L_3.
+
+b) If we have two geometric objects A and B in a flat plane, and we define the relation ~ to be mean 'is similar to', i.e. A ~ B means 'object A is similar to object B', then ~ is an equivalence relation.
+
+c) The &le; relation is *not* an equivalence relation. This is because it is not symmetric, e.g. 2 &le; 3, but obviously we don't have 3 &le; 2.
+
+Now, a congruence relation is more or less an equivalence relation, but with the extra requirement that the set *X* on which the relation is defined is an algebraic structure. In our case, when we talk about the set of integers 'modulo *n*,' we're actually referring to a special mathematical object known as a ring. A ring is just a set of arbitrary elements with some special rules and properties, but we won't get into that here. If you're interested, you should consult the abstract algebra section of the site.
+
+In any case, let's move on to modular arithmetic. When we talk about the set of integers 'modulo' some other integer *n*, what we mean is this: all integers in this number system are between 0 and *n-1* (inclusive). Addition, subtraction, and multiplication all work the way they do with the normal integers, but we are not allowed to divide numbers^1. Now, what happens when we add or multiply two numbers and we get a number that's less than 0 or bigger than *n-1*? Simple - we keep adding *n* or subtracting *n* from the number until it falls back within the set {0, 1, 2, ... , *n-2*, n-1*}. So if we are working with the integers modulo 7, and we consider 4*3 = 12, then this result in our modulo 7 world is actually given by 12-7 = 5. Thus, modulo 7, 4*3 = 5.
+
+If we have 5^2 = 25, then this becomes 25 = 18 = 11 = 4. We write this succinctly as 5^2 = 4 (mod 7). The symbol we use here is the congruence operator, which indicates that under our congruence relation, two numbers are equivalent (congruent) to one another. What exactly is the equivalence relation here? Above we basically just said that a number outside the range {0, ... , *n-1*} is equivalent to some number inside the range one we've subtracted or added *n* sufficiently many times, but this can be put into mathematical language more precisely. The two definitions for our congruence relation are equivalent:
+
+1) Two numbers *a* and *b* are congruent modulo *n* if a % n = b % n (i.e. the remainders of both numbers after being divided by *n* are the same)
+
+2) Two numbers *a* and *b* are congruent modulo *n* if n | *b - a*.
+
+Thus, from above, we have that 25 = 4 mod 7 because 1) 25 % 7 = 4 = 4 % 7 and because 2) 7 | (25 - 4).
+
+(More to come later)
+
+Footnotes
+1. The reason why we can't divide numbers is that for most values of *n*, the set of integers modulo *n* is not a field, which is to say that not every element possesses a multiplicative inverse. See the abstract algebra section for more details.",
         problems: [
           {
             question: "Calculate 7 (mod 4)",
@@ -175,7 +209,7 @@ To finish the proof, we need to show that the factorization of any integer great
           },
           {
             question: "Calculate 9^1001 (mod 5)",
-            answer: "1",
+            answer: "-1",
             difficulty_level: 2
           }
         ]
@@ -194,11 +228,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'High School',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -207,11 +241,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'High School',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -220,11 +254,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'High School',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -233,11 +267,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -246,11 +280,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -259,11 +293,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -272,11 +306,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -285,11 +319,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -298,11 +332,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -311,11 +345,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -324,11 +358,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -337,11 +371,39 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
+      },
+      {
+        position: 2,
+        title: 'Groups',
+        introduction: '',
+        body: "body",
+        problems: []
+      },
+      {
+        position: 3,
+        title: 'Rings',
+        introduction: '',
+        body: "body",
+        problems: []
+      },
+      {
+        position: 4,
+        title: 'Fields',
+        introduction: '',
+        body: "body",
+        problems: []
+      },
+      {
+        position: 5,
+        title: 'Vector Spaces',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -350,11 +412,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -363,11 +425,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -376,11 +438,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -389,11 +451,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -402,11 +464,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   },
@@ -415,11 +477,11 @@ To finish the proof, we need to show that the factorization of any integer great
     level: 'College',
     articles: [
       {
-      position: 1,
-      title: 'Introduction',
-      introduction: '',
-      body: "body",
-      problems: []
+        position: 1,
+        title: 'Introduction',
+        introduction: '',
+        body: "body",
+        problems: []
       }
     ]
   }

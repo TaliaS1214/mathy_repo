@@ -1,0 +1,23 @@
+<h3><%= @article.position %>. <%= @article.title %> Exercises</h3>
+
+<div class="article_problems">
+  <% if @problems != [] %>
+    <ol>
+    <% @problems.each do |problem| %>
+      <li><%= markdown(problem.question) %></li>
+      <p><%= link_to('Show Answer', subject_article_problem_path(@subject, @article, problem)) %><p>
+    <% end %>
+    </ol>
+  <% else %>
+    <p>Exercises coming soon!</p>
+  <% end %>
+</div>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to #{@article.title}", subject_article_path(@subject, @article)) %>
+  <!-- <% if current_user %>
+    | <%= link_to('Edit Pro', edit_subject_article_path(@subject, @article))%>
+  <% else %>
+    Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
+  <% end %> -->
+</div>

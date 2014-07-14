@@ -39,3 +39,21 @@
   color: #3BB878;
   transition: 0.2s;
 }
+
+#exercises_link {
+  width: 850px;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+#exercises_link a{
+  font-size: 16px;
+  border-top: 2px solid #2F4F4F;
+  padding: 5px;
+}
+
+#exercises_link a:hover{
+  text-decoration: none;
+  color: #3BB878;
+  transition: 0.2s;
+}
