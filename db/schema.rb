@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20140710235058) do
     t.datetime "updated_at"
   end
 
-  create_table "mathematicians", force: true do |t|
-    t.string   "name"
-    t.string   "nationality"
-    t.date     "birthday"
-    t.text     "info"
+  create_table "problems", force: true do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.integer  "difficulty_level"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

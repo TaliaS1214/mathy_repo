@@ -1,4 +1,4 @@
-<h2><%=@article.position%>. <%= @article.title %></h2>
+<h2>Chapter <%=@article.position%>. <%= @article.title %></h2>
 
 <%= render partial:'nav_menu'%>
 
@@ -8,6 +8,19 @@
 
 <div class="article_body">
   <%= markdown(@article.body)%>
+</div>
+
+<h3>Exercises</h3>
+<div class="article_problems">
+  <% if @article.problems != [] %>
+    <ol>
+    <% @article.problems.each do |problem| %>
+      <li><%= markdown(problem.question) %></li>
+    <% end %>
+    </ol>
+  <% else %>
+    <p>Exercises coming soon!</p>
+  <% end %>
 </div>
 
 <%= render partial:'nav_menu'%>

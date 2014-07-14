@@ -1,5 +1,6 @@
-Subject.destroy_all
+Problem.destroy_all
 Article.destroy_all
+Subject.destroy_all
 
 # Setting up the subjects
 
@@ -12,7 +13,8 @@ subjects = [
       position: 1,
       title: 'Introduction',
       introduction: 'Intro',
-      body: "No body yet."
+      body: "No body yet.",
+      problems: []
       },
       {
         position: 2,
@@ -40,23 +42,26 @@ In our picture above, our range is the letters *C* and *D*, since 1 gets mapped 
 
 Notice that the range of a function is always a subset of a function's codomain, since the actual outputs of a function (the range) must be included in the set of *potential* outputs (the codomain).
 
-Let's examine this in the context of an example with which we're more familiar. Consider the function &fnof;(x) = x^2. What are the domain and codomain of the function? The answer is: we don't know yet! Why? Because it's up to us. We get to choose what are the permissible inputs and outputs of the function."
+Let's examine this in the context of an example with which we're more familiar. Consider the function &fnof;(x) = x^2. What are the domain and codomain of the function? The answer is: we don't know yet! Why? Because it's up to us. We get to choose what are the permissible inputs and outputs of the function.",
+      problems: []
       },
       {
         position: 3,
         title: 'Conic Sections',
         introduction: "In this section we'll discuss the various kinds of conic sections,
         which are 1. Ellipses, 2. Parabolas, and 3. Hyperbolas.",
-        body: "Body."
+        body: "Body.",
+        problems: []
       },
       {
         position: 4,
         title: 'Exponents and Logs',
         introduction: "In this section we'll discuss what exponents and logarithms are
-        and how they're related to one another. A solid understanding of both concepts
-        is critical to understanding much of calculus and higher mathematics, so be sure
-        that you understand each of the topics discussed below!",
-        body: "Talk a bit about exponentials and logs here."
+and how they're related to one another. A solid understanding of both concepts
+is critical to understanding much of calculus and higher mathematics, so be sure
+that you understand each of the topics discussed below!",
+        body: "Talk a bit about exponentials and logs here.",
+        problems: []
       }
     ]
   },
@@ -68,18 +73,19 @@ Let's examine this in the context of an example with which we're more familiar. 
         position: 1,
         title: 'Introduction',
         introduction: ' ',
-        body: "Number Theory - the study of the integers - is among the oldest mathematical disciplines."
+        body: "Number Theory - the study of the integers - is among the oldest mathematical disciplines.",
+        problems: []
       },
       {
         position: 2,
         title: 'Prime Numbers',
         introduction: "Prime numbers are one of the fundamental units of study in number theory. They are considered
-        the \"building blocks\" of the integers due to a result known as the Fundamental Theorem of Arithmetic, which
-        states that every integer greater than 1 is either itself prime or the product of primes (more on this later). Prime
-        numbers exhibit many interesting properties, and many important open questions in mathematics deal with prime numbers.
-        In this section we cover some basic properties of prime numbers and some important results.",
+the \"building blocks\" of the integers due to a result known as the Fundamental Theorem of Arithmetic, which
+states that every integer greater than 1 is either itself prime or the product of primes (more on this later). Prime
+numbers exhibit many interesting properties, and many important open questions in mathematics deal with prime numbers.
+In this section we cover some basic properties of prime numbers and some important results.",
         body: "
-        Before we begin, let's recall (or learn for the first time) what a prime number is:
+Before we begin, let's recall (or learn for the first time) what a prime number is:
 
 **Definition 1** : A natural number is said to be *prime* if it is divisible only by 1 and itself.
 
@@ -128,24 +134,58 @@ Excellent. That's all we need! We're ready to prove the Fundamental Theorem of A
 
 __Proof (Contradiction)__
 Suppose that the conclusion were false, i.e. that there's at least one integer greater than 1 that cannot be uniquely expressed as a product of prime numbers. Let *n* be the smallest such integer. Obviously *n* can't be prime, because then *n* itself would in fact be expressed as the product of prime numbers. So *n* must be composite, i.e. *n* = *pq*, where *1 < p < n*, *1 < q < n*. Now, by assumption that *n* is the smallest number which cannot be expressed as the product of primes, we know that both *p* and *q* are able to be expressed as the product of primes, since they're both strictly less than *n*. But that means that *n*, being the product of *p* and *q*, is also a product of primes. So *n* can in fact be expressed as the product of primes, and therefore every integer greater than 1 can be expressed as the product of primes.
-To finish the proof, we need to show that the factorization of any integer greater than 1 into primes is unique. So suppose there were some integer *n* such that its factorization were not unique, i.e. *n* = *p_1 p_2 ... p_j* = *q_1 q_2 ... q_k*, where each *p_i* and *q_l* is prime. We cancel out all the common prime factors to get *p_i1 p_i2 ... p_is* = *q_j1 q_j2 ... q_js *, which means that none of the *p_i*'s are equal to any of the *q_j*'s. Now, since, say, *p_i1* divides the left hand side, it must also divide the right hand side, which means that by Lemma 4, *p_i1* | *q_jk* for some value of *k*. But that's impossible, since *q_jk* is prime. Thus, the factorization is unique. Q.E.D.
-
-
-
-        "
+To finish the proof, we need to show that the factorization of any integer greater than 1 into primes is unique. So suppose there were some integer *n* such that its factorization were not unique, i.e. *n* = *p_1 p_2 ... p_j* = *q_1 q_2 ... q_k*, where each *p_i* and *q_l* is prime. We cancel out all the common prime factors to get *p_i1 p_i2 ... p_is* = *q_j1 q_j2 ... q_js *, which means that none of the *p_i*'s are equal to any of the *q_j*'s. Now, since, say, *p_i1* divides the left hand side, it must also divide the right hand side, which means that by Lemma 4, *p_i1* | *q_jk* for some value of *k*. But that's impossible, since *q_jk* is prime. Thus, the factorization is unique. Q.E.D.",
+      problems: []
       },
       {
         position: 3,
         title: 'Modular Arithmetic and Congruences',
-        introduction: "
-        Modular arithmetic is an arithmetic system in which the integers behave quite differently from the way we're used to integers behaving. Unlike the normal arithmetic we know and love, when doing modular arithmetic with integers, there is such thing as a largest element. The analogy commonly used is that modular arithmetic is like telling time. When we look at a clock and see that it's 3 hours past 12pm, we know that it's not 15 o'clock (assume we're not on military time) but rather 3 o'clock. That's because the hours \"wrap around\" after the first 12 hours in the day have passed - the largest element in our time-telling system is the number 12. Now, unlike time, with modular arithmetic, there is a 0 element. The limit which the integers in a modular system may not exceed is referred to as the modulus , so in our time-telling scheme, we would say that we're doing arithmetic \"modulo 12\". We'll get into the details below. Keep in mind that modular arithmetic isn't easy to understand the first time you see it, so don't be worried if you don't completely understand this whole article the first time around!",
-        body: "Modular arithmetic works using what's known as a congruence relation."
+        introduction: "Modular arithmetic is an arithmetic system in which the integers behave quite differently from the way we're used to integers behaving. Unlike the normal arithmetic we know and love, when doing modular arithmetic with integers, there is such thing as a largest element. The analogy commonly used is that modular arithmetic is like telling time. When we look at a clock and see that it's 3 hours past 12pm, we know that it's not 15 o'clock (assume we're not on military time) but rather 3 o'clock. That's because the hours \"wrap around\" after the first 12 hours in the day have passed - the largest element in our time-telling system is the number 12. Now, unlike time, with modular arithmetic, there is a 0 element. The limit which the integers in a modular system may not exceed is referred to as the modulus , so in our time-telling scheme, we would say that we're doing arithmetic \"modulo 12\". We'll get into the details below. Keep in mind that modular arithmetic isn't easy to understand the first time you see it, so don't be worried if you don't completely understand this whole article the first time around!",
+        body: "Modular arithmetic works using what's known as a congruence relation.",
+        problems: [
+          {
+            question: "Calculate 7 (mod 4)",
+            answer: "3",
+            difficulty_level: 1
+          },
+          {
+            question: "Calculate 50 (mod 5)",
+            answer: "0",
+            difficulty_level: 1
+          },
+          {
+            question: "Calculate 4387 (mod 15)",
+            answer: "7",
+            difficulty_level: 1
+          },
+          {
+            question: "(T/F) 10 &equiv; 6 (mod 4)",
+            answer: "T",
+            difficulty_level: 1
+          },
+          {
+            question: "(T/F) a &equiv; b (mod n) implies ac &equiv; bc (mod n)",
+            answer: "F",
+            difficulty_level: 2
+          },
+          {
+            question: "(T/F) ac &equiv; bc (mod n) implies a &equiv; b (mod n)",
+            answer: "F",
+            difficulty_level: 2
+          },
+          {
+            question: "Calculate 9^1001 (mod 5)",
+            answer: "1",
+            difficulty_level: 2
+          }
+        ]
       },
       {
         position: 4,
         title: "Fermat's Little Theorem and RSA Encryption",
         introduction: "Here we'll talk about FLT and RSA.",
-        body: "No body yet."
+        body: "No body yet.",
+        problems: []
       }
     ]
   },
@@ -157,7 +197,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -169,7 +210,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -181,7 +223,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -193,7 +236,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -205,7 +249,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -217,7 +262,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -229,7 +275,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -241,7 +288,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -253,7 +301,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -265,7 +314,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -277,7 +327,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -289,7 +340,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -301,7 +353,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -313,7 +366,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -325,7 +379,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -337,7 +392,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -349,7 +405,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   },
@@ -361,7 +418,8 @@ To finish the proof, we need to show that the factorization of any integer great
       position: 1,
       title: 'Introduction',
       introduction: '',
-      body: "body"
+      body: "body",
+      problems: []
       }
     ]
   }
@@ -375,8 +433,13 @@ subjects.each do |subject|
     current_article = Article.create({
       position: article[:position],
       title: article[:title],
-      introduction: article[:introduction].gsub("\n", " ").squeeze(" "),
-      body: article[:body].gsub("\n", " ").squeeze(" ")})
+      introduction: article[:introduction], #.gsub("\n", " ").squeeze(" "),
+      body: article[:body], #.gsub("\n", " ").squeeze(" ")
+      })
+    article[:problems].each do |problem|
+      current_problem = Problem.create!(problem)
+      current_article.problems << current_problem
+    end
     current_subject.articles << current_article
   end
 end

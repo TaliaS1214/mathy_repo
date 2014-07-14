@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   # Resources and Articles
   resources :subjects do
-    resources :articles
+    resources :articles do
+      resources :problems
+    end
   end
 
   # Sessions
