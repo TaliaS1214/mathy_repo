@@ -4,5 +4,10 @@
 <p> Answer: <%= markdown(@problem.answer) %></p>
 
 <div class="bottom_menu_options">
-  <%= link_to("Back to Chapter Exercises", subject_article_path(@subject, @article)) %>
+  <%= link_to("Back to Chapter Exercises", subject_article_path(@subject, @article)) %> |
+  <% if current_user %>
+    <%= link_to('Edit Problem', edit_subject_article_problem_path(@subject, @article, @problem))%>
+  <% else %>
+    Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
+  <% end %>
 </div>

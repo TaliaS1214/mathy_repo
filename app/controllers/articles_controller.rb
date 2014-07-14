@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  def index
+  end
+
   def new
     @article = Article.new
     @subject = Subject.find(params[:subject_id])
@@ -8,7 +11,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      p @article
       redirect_to(subject_article_path(@article.subject, @article))
     else
       render :new

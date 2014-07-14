@@ -199,7 +199,7 @@ Footnotes
           },
           {
             question: "(T/F) a &equiv; b (mod n) implies ac &equiv; bc (mod n)",
-            answer: "F",
+            answer: "T",
             difficulty_level: 2
           },
           {

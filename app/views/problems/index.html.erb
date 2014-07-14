@@ -2,22 +2,20 @@
 
 <div class="article_problems">
   <% if @problems != [] %>
-    <ol>
-    <% @problems.each do |problem| %>
-      <li><%= markdown(problem.question) %></li>
-      <p><%= link_to('Show Answer', subject_article_problem_path(@subject, @article, problem)) %><p>
-    <% end %>
-    </ol>
+    <h4>True/False Exercises<h4>
+        <%= render partial: 'show_exercises', locals: {problems: @tf_problems} %>
+    <h4>Other Exercises</h4>
+        <%= render partial: 'show_exercises', locals: {problems: @non_tf_problems} %>
   <% else %>
     <p>Exercises coming soon!</p>
   <% end %>
 </div>
 
 <div class="bottom_menu_options">
-  <%= link_to("Back to #{@article.title}", subject_article_path(@subject, @article)) %>
-  <!-- <% if current_user %>
-    | <%= link_to('Edit Pro', edit_subject_article_path(@subject, @article))%>
+  <%= link_to("Back to #{@article.title}", subject_article_path(@subject, @article)) %>|
+  <% if current_user %>
+    <%= link_to('Add Problem', new_subject_article_problem_path(@subject, @article))%>
   <% else %>
     Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
-  <% end %> -->
+  <% end %>
 </div>

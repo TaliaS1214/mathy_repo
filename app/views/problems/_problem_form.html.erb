@@ -1,0 +1,30 @@
+<%= form_for [@subject, @article, @problem] do |f| %>
+  <% if @problem.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@problem.errors.count, "error")%> prohibited
+    this article from being saved:</h3>
+    <ul>
+      <% @problem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div>
+    <%= f.label(:question)%>
+    <%= f.text_field(:question)%>
+  </div>
+  <div>
+    <%= f.label(:answer)%>
+    <%= f.text_field(:answer)%>
+  </div>
+  <div>
+    <%= f.label(:difficulty_level)%>
+    <%= f.text_field(:difficulty_level)%>
+  </div>
+  <%= f.submit %>
+  <% end %>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to #{@article.title}", subject_article_path(@subject, @article)) %>
+</div>

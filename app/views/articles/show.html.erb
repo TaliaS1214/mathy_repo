@@ -19,7 +19,7 @@
 <div class="bottom_menu_options">
   <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %> |
   <% if current_user %>
-    <%= link_to('Edit Article', edit_subject_article_path(@subject, @article))%>
+    <%= link_to('Edit Chapter', edit_subject_article_path(@subject, @article))%>
   <% else %>
     Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
   <% end %>

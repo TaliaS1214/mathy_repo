@@ -1,0 +1,6 @@
+<ol>
+  <% problems.each do |problem| %>
+    <li><%= markdown(problem.question) %></li>
+    <p><%= link_to('Show Answer', subject_article_problem_path(@subject, @article, problem)) %><p>
+  <% end %>
+</ol>
