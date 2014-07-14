@@ -7,14 +7,7 @@ p{
   font-size: 15px;
 }
 
-div #right_menu {
-  margin: 30px;
-  width: 200px;
-  height: 500px;
-  float:right;
-  border-left: 1px solid #2F4F4F;
-  padding-left: 20px;
-}
+
 
 a {
   text-decoration: none;
@@ -26,7 +19,14 @@ a:hover{
   color: #FF8C00;
   transition: 0.2s;
 }
-
-#right_menu div {
-  margin: 20px 0px;
-}
+// div #right_menu {
+//   margin: 30px;
+//   width: 200px;
+//   height: 500px;
+//   float:right;
+//   border-left: 1px solid #2F4F4F;
+//   padding-left: 20px;
+// }
+// #right_menu div {
+//   margin: 20px 0px;
+// }

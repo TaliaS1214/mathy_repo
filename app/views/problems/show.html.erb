@@ -1,0 +1,8 @@
+<h2><%= @subject.name %>: <%= @article.title %></h2>
+
+<p> Question: <%= markdown(@problem.question) %></p>
+<p> Answer: <%= markdown(@problem.answer) %></p>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to Chapter Exercises", subject_article_path(@subject, @article)) %>
+</div>

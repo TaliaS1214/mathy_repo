@@ -1,9 +1,9 @@
 <div id='article_nav'>
   <% if @current_position > 1%>
-    <%= link_to("Previous: #{@previous_article.position}. #{@previous_article.title}", subject_article_path(@article.subject, @previous_article))%>
+    <%= link_to("#{@previous_article.position}. #{@previous_article.title}", subject_article_path(@article.subject, @previous_article))%>
   <% end %>
   <% if (@current_position > 1 && @current_position < @last_position)%>|<% end %>
   <% if @current_position < @last_position %>
-    <%= link_to("Next: #{@next_article.position}. #{@next_article.title}", subject_article_path(@subject, @next_article))%>
+    <%= link_to("#{@next_article.position}. #{@next_article.title}", subject_article_path(@subject, @next_article))%>
   <% end %>
 </div>
