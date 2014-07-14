@@ -10,9 +10,11 @@
   <%= markdown(@article.body)%>
 </div>
 
-<div id="exercises_link">
-  <%= link_to("View Chapter Exercises", subject_article_problems_path(@subject, @article)) %>
-</div>
+<% if @article.title != "Introduction" %>
+  <div id="exercises_link">
+    <%= link_to("View Chapter Exercises", subject_article_problems_path(@subject, @article)) %>
+  </div>
+<% end %>
 
 <%= render partial:'nav_menu'%>
 

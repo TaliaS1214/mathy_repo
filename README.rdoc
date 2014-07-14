@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is supposed to serve as a repository of online textbooks for
+various math subjects. Ideally, the quality of the texts would allow them to
+be used as either a substitute or a supplement to traditional textbooks for
+any level of math, whether it be high school or college or graduate level. For each
+subject, there are chapters (called articles in the source code), each of which
+in turn has exercises (called problems in the source code). The site is not
+intended to work the way Wikipedia does, in that not everyone should be able
+to add to or edit the chapters and exercises. 
 
-Things you may want to cover:
+ERD:
 
-* Ruby version
+https://www.lucidchart.com/documents/edit/18dafc4c-6ccf-4242-91f4-572424de66ba/0
 
-* System dependencies
+User Stories:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+https://trello.com/b/lUmBKUCi/sean-talia-mathy

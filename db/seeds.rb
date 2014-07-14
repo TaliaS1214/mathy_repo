@@ -82,8 +82,7 @@ that you understand each of the topics discussed below!",
         introduction: "Prime numbers are one of the fundamental units of study in number theory. They are considered
 the \"building blocks\" of the integers due to a result known as the Fundamental Theorem of Arithmetic, which
 states that every integer greater than 1 is either itself prime or the product of primes (more on this later). Prime
-numbers exhibit many interesting properties, and many important open questions in mathematics deal with prime numbers.
-In this section we cover some basic properties of prime numbers and some important results.",
+numbers exhibit many interesting properties, and many important open questions in mathematics deal with prime numbers. In this section we cover some basic properties of prime numbers and some important results.",
         body: "
 Before we begin, let's recall (or learn for the first time) what a prime number is:
 
