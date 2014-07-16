@@ -1,3 +1,8 @@
 <h2>Edit Problem</h2>
 
-<p><%= render 'problem_form' %></p>
+<p><%= render 'form' %></p>
+
+<div class="bottom_menu_options">
+  <%= link_to('Back to Chapter Exercises', subject_article_problems_path) %> |
+  <%= link_to('Delete Exercise', subject_article_problem_path(@subject, @article, @problem), method: :delete) %>
+</div>

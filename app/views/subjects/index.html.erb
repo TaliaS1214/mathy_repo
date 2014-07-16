@@ -10,6 +10,8 @@
 
 <div class="bottom_menu_options">
   <% if current_user %>
-    <%= link_to('Add Subject', new_subject_path) %>
-  <% end %>  
+    <%= link_to('Add a New Subject', new_subject_path) %>
+  <% else %>
+    <%= render 'layouts/register_question' %>
+  <% end %>
 </div>

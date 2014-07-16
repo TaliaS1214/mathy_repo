@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
 
+  before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @subjects = Subject.all.sort_by { |s| s.name }
   end
@@ -19,7 +21,6 @@ class SubjectsController < ApplicationController
 
   def show
     @subject = Subject.find(params[:id])
-    @articles = @subject.articles.sort_by { |a| a.position }
   end
 
   def edit

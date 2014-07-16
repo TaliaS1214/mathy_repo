@@ -1,6 +1,6 @@
 <h2>Chapter <%=@article.position%>. <%= @article.title %></h2>
 
-<%= render partial:'nav_menu'%>
+<%= render partial:'article_nav_menu'%>
 
 <div class="article_introduction">
   <%= markdown(@article.introduction) %>
@@ -16,13 +16,13 @@
   </div>
 <% end %>
 
-<%= render partial:'nav_menu'%>
+<%= render partial:'article_nav_menu'%>
 
 <div class="bottom_menu_options">
-  <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %> |
+  <%= link_to("Back to #{@subject.name} index", subject_articles_path(@subject)) %> |
   <% if current_user %>
     <%= link_to('Edit Chapter', edit_subject_article_path(@subject, @article))%>
   <% else %>
-    Want to contribute?<%= link_to 'Register', new_user_path %>to become an editor!
+    <%= render 'layouts/register_question' %>
   <% end %>
 </div>

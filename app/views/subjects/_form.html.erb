@@ -10,11 +10,13 @@
     </ul>
   </div>
   <% end %>
+  <div>
   <%= f.label(:name)%>
   <%= f.text_field(:name)%>
-  <br>
+  </div>
+  <div>
   Level
   <%= f.select(:level, %w(High\ School College Graduate)) %>
-  <br>
+  </div>
   <%= f.submit %>
   <% end %>

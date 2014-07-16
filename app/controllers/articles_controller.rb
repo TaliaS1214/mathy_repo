@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
 
+  before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
+
   def index
+    @subject = Subject.find(params[:subject_id])
+    @articles = @subject.articles.sort_by { |a| a.position }
   end
 
   def new
@@ -9,9 +13,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    @subject = Subject.find(params[:subject_id])
     @article = Article.new(article_params)
+    @article.subject = @subject
     if @article.save
-      redirect_to(subject_article_path(@article.subject, @article))
+      redirect_to(subject_article_path(@subject, @article))
     else
       render :new
     end
@@ -19,8 +25,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @subject = Subject.find(params[:subject_id])
     @problems = @article.problems
-    @subject = @article.subject
 
     @current_position = @article.position
     @last_position = @article.subject.articles.length
@@ -31,13 +37,14 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    @subject = @article.subject
+    @subject = Subject.find(params[:subject_id])
   end
 
   def update
     @article = Article.find(params[:id])
+    @subject = Subject.find(params[:subject_id])
     if @article.update(article_params)
-      redirect_to(subject_article_path(@article.subject, @article))
+      redirect_to(subject_article_path(@subject, @article))
     else
       render :edit
     end

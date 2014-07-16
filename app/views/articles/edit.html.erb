@@ -1,3 +1,8 @@
 <h2>Edit Article</h2>
 
 <p><%= render 'form' %></p>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to #{@subject.name} index", subject_articles_path(@subject)) %> |
+  <%= link_to('Delete Chapter', subject_article_path(@subject, @article), method: :delete) %>
+</div>

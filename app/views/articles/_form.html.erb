@@ -10,8 +10,6 @@
     </ul>
   </div>
   <% end %>
-  Subject
-  <%= f.collection_select(:subject_id, Subject.all, :id, :name) %>
   <div>
   <%= f.label(:position)%>
   <%= f.text_field(:position)%>
@@ -30,7 +28,3 @@
   </div>
   <%= f.submit %>
 <% end %>
-
-<div class="bottom_menu_options">
-  <%= link_to("Back to #{@subject.name}", subject_path(@subject)) %>
-</div>

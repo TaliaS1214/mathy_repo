@@ -1,3 +1,7 @@
 <h2>New Article</h2>
 
 <p><%= render 'form' %></p>
+
+<div class="bottom_menu_options">
+  <%= link_to("Back to #{@subject.name} index", subject_articles_path(@subject)) %> |
+</div>
