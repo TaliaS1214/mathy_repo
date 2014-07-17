@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # Welcome Page
   root('welcome#index')
 
+  # About Page
+  get '/about' => 'about#index', as: 'about'
+
   # Resources and Articles
   resources :subjects do
     resources :articles do

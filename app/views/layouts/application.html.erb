@@ -5,27 +5,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../app/assets/stylesheets/skeleton.css">
   </head>
   <body>
     <header>
-      <div id="header_content">
-        <div id="logo">
-          <%= link_to('Mathy', root_path)%>
+      <div class="container">
+        <div class="two columns alpha">
+          <h1>Mathy</h1>
         </div>
-        <div id="slogan">
+        <div id="slogan" class="two columns">
           Math made easier.
         </div>
-        <div id="user_nav">
-          <% if current_user %>
-            Welcome back, <%= current_user.first_name %>!
-              <%= link_to 'Log Out', logout_path %>
-          <% else %>
-            <%= link_to 'Log In ', login_path %> |
-            <%= link_to 'Register', new_user_path %>
-          <% end %>
-        </div>
+        <nav class="twelve columns omega">
+          <ul>
+            <li><%= link_to('Home', root_path)%></li>
+            <li><%= link_to('About', about_path)%></li>
+            <% if current_user %>
+              <li><%= link_to 'Log Out', logout_path %></li>
+            <% else %>
+              <li><%= link_to 'Log In ', login_path %></li>
+              <li><%= link_to 'Register', new_user_path %></li>
+            <% end %>
+          </ul>
+        </nav>
       </div>
     </header>
     <div id="content">
